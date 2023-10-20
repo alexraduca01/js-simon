@@ -67,8 +67,12 @@ btn.addEventListener('click', function(){
         finalResult.classList.remove('d-none');
     }
 
+    setTimeout(function(){
+        location.reload();
+    }, 10000);
+
 })
 
 reset.addEventListener('click', function(){
-    location.reload();
+    location.reload();   
 })
