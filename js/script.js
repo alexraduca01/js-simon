@@ -4,7 +4,8 @@
 // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
 
 const result = document.getElementById('result');
-const btn = document.querySelector('button');
+const btn = document.querySelector('.btn-success');
+const reset = document.querySelector('.btn-danger');
 const text = document.querySelector('p');
 const input = document.querySelectorAll('input');
 const finalResult = document.getElementById('text');
@@ -57,11 +58,17 @@ btn.addEventListener('click', function(){
 
     if(resultArray.length === toGenNum){
         finalResult.innerHTML = 'hai vinto!';
+        finalResult.classList.remove('d-none');
     } else if(counter === 0){
         finalResult.innerHTML = 'hai perso!, non hai indovinato nessun numero!';
+        finalResult.classList.remove('d-none');
     } else {
         finalResult.innerHTML = 'hai indovinato solo: ' + ' ' + counter + ' '+ ', i tuoi numeri: ' + resultArray;
+        finalResult.classList.remove('d-none');
     }
 
 })
 
+reset.addEventListener('click', function(){
+    location.reload();
+})
