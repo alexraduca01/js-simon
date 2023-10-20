@@ -74,5 +74,7 @@ btn.addEventListener('click', function(){
 })
 
 reset.addEventListener('click', function(){
-    location.reload();   
+    for(let i = 0; i < input.length; i++){
+        input[i].value = '';
+    }
 })
